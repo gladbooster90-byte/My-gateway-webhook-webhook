@@ -1,0 +1,111 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User account with mobile money profile, VIP tier details, and wallet balances",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID"
+        },
+        "name": {
+          "type": "string",
+          "description": "User full name"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        },
+        "momoNumber": {
+          "type": "string",
+          "description": "Mobile Money registered phone number"
+        },
+        "network": {
+          "type": "string",
+          "enum": ["MTN", "AIRTEL"],
+          "description": "Mobile telecommunication provider"
+        },
+        "vipLevel": {
+          "type": "number",
+          "description": "Active VIP level (1-9)"
+        },
+        "vipName": {
+          "type": "string",
+          "description": "Active VIP plan title"
+        },
+        "isVipActive": {
+          "type": "boolean",
+          "description": "Whether the VIP contract is active"
+        },
+        "totalBalance": {
+          "type": "number",
+          "description": "Total account balance in UGX"
+        },
+        "withdrawableEarnings": {
+          "type": "number",
+          "description": "Withdrawable earnings balance in UGX"
+        },
+        "depositedAmount": {
+          "type": "number",
+          "description": "Total deposited capital in UGX"
+        },
+        "totalWithdrawn": {
+          "type": "number",
+          "description": "Total successfully withdrawn amount in UGX"
+        },
+        "aiIncome": {
+          "type": "number",
+          "description": "Total AI compute rewards earned in UGX"
+        },
+        "todayEarnings": {
+          "type": "number",
+          "description": "Total earnings accumulated today in UGX"
+        },
+        "inviteCount": {
+          "type": "number",
+          "description": "Direct referral invite count"
+        },
+        "teamCount": {
+          "type": "number",
+          "description": "Total multi-tier team count"
+        },
+        "teamIncome": {
+          "type": "number",
+          "description": "Total referral commission earnings in UGX"
+        },
+        "referralCode": {
+          "type": "string",
+          "description": "Unique referral code"
+        },
+        "luckySpins": {
+          "type": "number",
+          "description": "Available lucky fortune wheel spins"
+        },
+        "dailyRewardStreak": {
+          "type": "number",
+          "description": "Consecutive login check-in streak day"
+        },
+        "lastRewardClaimDate": {
+          "type": "string",
+          "description": "Date string of last claimed reward"
+        },
+        "vipDaysElapsed": {
+          "type": "number",
+          "description": "Elapsed days in current contract"
+        },
+        "vipTotalDays": {
+          "type": "number",
+          "description": "Total contract cycle days (100)"
+        }
+      },
+      "required": ["name", "totalBalance", "withdrawableEarnings"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Stores user profile, wallet balance, VIP state, and task earnings"
+    }
+  }
+}

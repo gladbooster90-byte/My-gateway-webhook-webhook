@@ -1,0 +1,6 @@
+{
+  "name": "UGX VIP Wealth & AI Income Wallet",
+  "description": "Mobile Money (MoMo) financial earnings dashboard with AI income tasks, VIP tiers, team commissions, lucky raffle, and real-time withdrawal management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
